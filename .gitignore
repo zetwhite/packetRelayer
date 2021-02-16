@@ -30,6 +30,7 @@
 *.exe
 *.out
 *.app
+main
 
 # Visual Studio code 
 .vscode

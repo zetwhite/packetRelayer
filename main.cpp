@@ -71,18 +71,20 @@ int main(int argc, char **argv) {
                 pcap_freealldevs(devices); 
                 exit(-1);  
             }
+            printf("input device : %s\n", d->name); 
             break; 
         }
         idx++; 
     } 
 
     for( d = devices, idx = 0; d; d = d->next){
-        if( idx == inputNo ){
+        if( idx == outputNo ){
             if(!(outHandle = pcap_open_live(d->name, 65536, 1, 1000, errbuf))){
                 printf("fail to open inut devices %s\n", d->name);
                 pcap_freealldevs(devices); 
                 exit(-1);  
             }
+            printf("output device : %s\n", d->name); 
             break; 
         }
         idx++; 
